@@ -1,0 +1,91 @@
+function [xk11,xk12,xk13,xk21,xk22,xk23,xk31,xk32,xk33,xt11,xt12,xt13,xt21,xt22,xt23,xt31,xt32,xt33] = ...
+          k3(n,X1,X2,X3,k11,k12,k13,k21,k22,k23,k31,k32,k33,t11,t12,t13,t21,t22,t23,t31,t32,t33)
+    % Matriks untuk y1
+    mk11=X1-k11; mk12=X1-k12; mk13=X1-k13; mk21=X2-k21; mk22=X2-k22; mk23=X2-k23; mk31=X3-k31; mk32=X3-k32; mk33=X3-k33; 
+    for i=1:n
+        if mk11(i,1) < 0 
+            xk11(i,1)=0;
+        else
+            xk11(i,1)=mk11(i,1);
+        end
+    end
+    for i=1:n
+        if mk12(i,1) < 0 
+            xk12(i,1)=0;
+        else
+            xk12(i,1)=mk12(i,1);
+        end
+    end
+    for i=1:n
+        if mk13(i,1) < 0 
+            xk13(i,1)=0;
+        else
+            xk13(i,1)=mk13(i,1);
+        end
+    end
+    for i=1:n
+        if mk21(i,1) < 0 
+            xk21(i,1)=0;
+        else
+            xk21(i,1)=mk21(i,1);
+        end
+    end
+    for i=1:n
+        if mk22(i,1) < 0 
+            xk22(i,1)=0;
+        else
+            xk22(i,1)=mk22(i,1);
+        end
+    end
+    for i=1:n
+        if mk23(i,1) < 0 
+            xk23(i,1)=0;
+        else
+            xk23(i,1)=mk23(i,1);
+        end
+    end
+    % Matriks untuk y2
+    mt11=X1-t11; mt12=X1-t12; mt13=X1-t13; mt21=X2-t21; mt22=X2-t22; mt23=X2-t23; 
+    for i=1:n
+        if mt11(i,1) < 0 
+            xt11(i,1)=0;
+        else
+            xt11(i,1)=mt11(i,1);
+        end
+    end
+    for i=1:n
+        if mt12(i,1) < 0 
+            xt12(i,1)=0;
+        else
+            xt12(i,1)=mt12(i,1);
+        end
+    end
+    for i=1:n
+        if mt13(i,1) < 0 
+            xt13(i,1)=0;
+        else
+            xt13(i,1)=mt13(i,1);
+        end
+    end
+    for i=1:n
+        if mt21(i,1) < 0 
+            xt21(i,1)=0;
+        else
+            xt21(i,1)=mt21(i,1);
+        end
+    end
+    for i=1:n
+        if mt22(i,1) < 0 
+            xt22(i,1)=0;
+        else
+            xt22(i,1)=mt22(i,1);
+        end
+    end
+    for i=1:n
+        if mt23(i,1) < 0 
+            xt23(i,1)=0;
+        else
+            xt23(i,1)=mt23(i,1);
+        end
+    end
+return
